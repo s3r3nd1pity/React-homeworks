@@ -1,15 +1,17 @@
 
 import './App.css'
-import {FamilyComponent} from "./components/family-component/FamilyComponent.tsx";
-
-function App() {
+import UsersComponent from "./components/users-component/UsersComponent.tsx";
+const App=() =>{
+   
 
 
     return (
         <>
-            <FamilyComponent></FamilyComponent>
+          <UsersComponent/>
         </>
     )
 }
 
 export default App
+
+
