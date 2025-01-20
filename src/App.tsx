@@ -1,13 +1,12 @@
-
 import './App.css'
-import {FamilyComponent} from "./components/family-component/FamilyComponent.tsx";
+import TodosComponent from "./components/todos-component/TodosComponent.tsx";
 
 function App() {
 
 
     return (
         <>
-            <FamilyComponent></FamilyComponent>
+            <TodosComponent/>
         </>
     )
 }
