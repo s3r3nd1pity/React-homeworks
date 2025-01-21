@@ -1,26 +1,22 @@
-import {useEffect, useState} from "react";
-import {getAllUsers} from "../../services/api.services.tsx";
-import {IUser} from "../../models/users/IUser.ts";
 import UserComponent from "./UserComponent.tsx";
+import {useEffect, useState} from "react";
+import {IUser} from "../../models/users/IUser.ts";
+import {getUsersInfo} from "../../services/api.services.tsx";
+import {useSearchParams} from "react-router-dom";
 
 const UsersComponent = () => {
-    const [allUsers, setAllUsers] = useState<IUser[]>([])
+    const [users,setUsers]=useState<IUser[]>([])
+    const [searchParams]=useSearchParams({page:'1'})
     useEffect(() => {
-        if (allUsers) {
-            getAllUsers()
-                .then(
-                    ({users}) => {
-                        setAllUsers(users)
-                    }
-                )
-        }
-    },[])
+        const currentPage=searchParams.get('page')||'1'
+        getUsersInfo(currentPage)
+            .then(value =>setUsers(value.users) )
+    }, [searchParams]);
     return (
         <div>
             {
-                allUsers.map(value => <UserComponent key={value.id} user={value}/>)
+                users.map(user=><UserComponent user={user} key={user.id}/>)
             }
-
         </div>
     );
 };

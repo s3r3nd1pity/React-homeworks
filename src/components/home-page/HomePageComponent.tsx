@@ -2,8 +2,7 @@
 const HomePageComponent = () => {
     return (
         <div>
-            <p>Now you're at homepage </p>
-
+            <h3>Now you are on Home Page</h3>
         </div>
     );
 };
