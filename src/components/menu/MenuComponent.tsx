@@ -6,7 +6,7 @@ const Menu = () => {
             <ul>
                 <li><Link to={''}>Home</Link></li>
                 <li><Link to={'login'}>Go to login</Link></li>
-                <li><Link to={'auth/resources'}>go to products</Link></li>
+                <li><Link to={'auth/resources'}>go to auth</Link></li>
             </ul>
         </div>
     );

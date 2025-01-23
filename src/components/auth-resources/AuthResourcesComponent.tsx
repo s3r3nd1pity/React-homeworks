@@ -1,9 +1,10 @@
 import {useEffect} from "react";
-import {loadAuthProducts} from "../../services/api.services.tsx";
+import {loadAuthProducts, refresh} from "../../services/api.services.tsx";
 
 const AuthResourcesComponent = () => {
     useEffect(() => {
-        loadAuthProducts()
+        loadAuthProducts().then(products=>console.log(products)).catch(reason => console.log(reason))
+        refresh().then(() => loadAuthProducts())
     }, []);
     return (
         <div>

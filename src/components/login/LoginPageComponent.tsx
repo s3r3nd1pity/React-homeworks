@@ -9,11 +9,12 @@ const LoginPageComponent = () => {
                 password:"emilyspass",
                 expiresInMins:1
             }
-        )
+
+        ).then( )
     }, []);
     return (
         <div>
-
+log
         </div>
     );
 };
